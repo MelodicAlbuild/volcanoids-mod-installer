@@ -1,0 +1,19 @@
+{
+  "name": "volcanoids-mod-installer",
+  "version": "1.0.0",
+  "description": "Moo",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/MelodicAlbuild/volcanoids-mod-installer.git"
+  },
+  "author": "MelodicAlbuild",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/MelodicAlbuild/volcanoids-mod-installer/issues"
+  },
+  "homepage": "https://github.com/MelodicAlbuild/volcanoids-mod-installer#readme"
+}
