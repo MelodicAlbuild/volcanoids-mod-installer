@@ -1,10 +1,12 @@
 {
-  "name": "volcanoids-mod-installer",
+  "name": "melodic-mod-installer",
   "version": "1.0.0",
-  "description": "Moo",
-  "main": "index.js",
+  "description": "The Melodic Moderation Installer",
+  "main": "app/main.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "start": "electron .",
+    "package": "electron-forge package",
+    "make": "electron-forge make"
   },
   "repository": {
     "type": "git",
@@ -17,6 +19,51 @@
   },
   "homepage": "https://github.com/MelodicAlbuild/volcanoids-mod-installer#readme",
   "devDependencies": {
-    "electron": "^11.1.1"
+    "@electron-forge/cli": "^6.0.0-beta.54",
+    "@electron-forge/maker-deb": "^6.0.0-beta.54",
+    "@electron-forge/maker-rpm": "^6.0.0-beta.54",
+    "@electron-forge/maker-squirrel": "^6.0.0-beta.54",
+    "@electron-forge/maker-zip": "^6.0.0-beta.54",
+    "electron": "^11.2.0"
+  },
+  "dependencies": {
+    "electron-dl": "^3.0.2",
+    "electron-squirrel-startup": "^1.0.0",
+    "request": "^2.88.2",
+    "update-electron-app": "^2.0.1"
+  },
+  "config": {
+    "forge": {
+      "packagerConfig": {},
+      "makers": [
+        {
+          "name": "@electron-forge/maker-squirrel",
+          "config": {
+            "name": "volcanoids_mod_installer"
+          }
+        },
+        {
+          "name": "@electron-forge/maker-zip"
+        },
+        {
+          "name": "@electron-forge/maker-deb",
+          "config": {
+            "options": {
+              "maintainer": "MelodicAlbuild",
+              "homepage": "https://melodicalbuild.me"
+            }
+          }
+        },
+        {
+          "name": "@electron-forge/maker-rpm",
+          "config": {
+            "options": {
+              "maintainer": "MelodicAlbuild",
+              "homepage": "https://melodicalbuild.me"
+            }
+          }
+        }
+      ]
+    }
   }
 }
